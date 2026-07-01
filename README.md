@@ -82,7 +82,7 @@
 自然語言提問「去沖繩的機票日期是什麼時候」,系統跨 4 份 PDF 綜合
 回答並附引用來源與相似度分數。此範例使用 OpenAI 作為生成層。
 
-![RAG OpenAI](docs/screenshots/09_rag_multi_field_extraction.png)
+![RAG OpenAI](docs/screenshots/10_rag_travel_pdf.png)
 
 提問「請問大興旅行社規劃的北海道旅行是什麼時候,並給我航班號碼」,
 系統從行程報價單 PDF 中同時抽取「出發日期(2026 年 10 月 2 日)」
