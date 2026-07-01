@@ -91,6 +91,27 @@
 
 ---
 
+## Local LLM 部署驗證
+
+### 8. Ollama 於 M5 Air 對外服務(Server 端)
+![Ollama Server](docs/screenshots/08_ollama_server_setup.png)
+
+於 M5 Air(Apple M5 / 24GB 統一記憶體 / macOS Tahoe 26.5.1)部署
+Ollama 作為 inference server。透過 `launchctl setenv OLLAMA_HOST "0.0.0.0:11434"`
+將預設僅監聽 `localhost` 的 Ollama 改為對所有網卡開放,重啟後 `lsof -i :11434`
+可見 `TCP *:11434 (LISTEN)`,確認對內網公開推論服務。
+
+### 9. 桌機 (Windows) 透過內網呼叫本地 LLM(Client 端)
+![Client 呼叫驗證](docs/screenshots/09_client_curl_verification.png)
+
+於桌機端以 `curl` 呼叫 M5 Air 上的 Ollama 服務
+(`http://192.168.50.225:11434/api/generate`),模型 `qwen2.5:7b` 成功
+回應繁體中文技術問題(HNSW 演算法說明)。此舉證明「跨機器內網服務化」
+架構已實際運作:應用邏輯位於桌機、LLM 推論位於 M5 Air,透過 HTTP 通訊。
+此為論文系統可切換至本地私有化部署的關鍵驗證。
+
+---
+
 ## Tech Stack
 
 - **前端**: Next.js 15 / React 19 / TypeScript
@@ -117,7 +138,7 @@
 
 ### 後端
 
-git clone https://github.com/xxx/dual-track-retrieval-backend
+git clone https://github.com/Dyc77/dual-track-retrieval-backend
 cd dual-track-retrieval-backend
 pip install -r requirements.txt
 # 設定環境變數(OPENAI_API_KEY, GEMINI_API_KEY, REDIS_URL 等)
@@ -125,7 +146,7 @@ python app.py
 
 ### 前端
 
-git clone https://github.com/xxx/dual-track-retrieval-frontend
+git clone https://github.com/Dyc77/dual-track-retrieval-frontend
 cd dual-track-retrieval-frontend
 npm install
 npm run dev
