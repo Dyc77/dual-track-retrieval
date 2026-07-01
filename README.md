@@ -15,9 +15,9 @@
 
 前後端分離架構,分為兩個獨立 repo:
 
-- 🎨 **前端**: [dual-track-retrieval-frontend](https://github.com/xxx/dual-track-retrieval-frontend)
+- 🎨 **前端**: [dual-track-retrieval-frontend](https://github.com/Dyc77/dual-track-retrieval-frontend)
   Next.js 15 / React 19 / TypeScript
-- ⚙️ **後端**: [dual-track-retrieval-backend](https://github.com/xxx/dual-track-retrieval-backend)
+- ⚙️ **後端**: [dual-track-retrieval-backend](https://github.com/Dyc77/dual-track-retrieval-backend)
   Flask 2.3 / Redis Stack + HNSW / OpenAI / Gemini / Ollama
 
 ---
