@@ -130,8 +130,6 @@ Ollama 作為 inference server。透過 `launchctl setenv OLLAMA_HOST "0.0.0.0:1
 - 0.2–0.8 相似度閾值掃描 + 人工案例驗證
 - 實證「詞彙不匹配」與「資訊密度不對稱」現象
 
-詳見 [論文 PDF](docs/thesis.pdf) 第四章。
-
 ---
 
 ## 快速啟動
